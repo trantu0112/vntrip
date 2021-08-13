@@ -1,0 +1,23 @@
+User-Agent: *
+Allow: /
+
+Disallow: /n/*
+Disallow:  /khach-san-quoc-te/*
+Disallow: /hotel-detail/*
+Disallow: /search*
+Disallow: /hotels/
+Disallow: /hotel-list*
+Disallow: /hotel_images/*
+Disallow: /homepage*
+Disallow: /m/*
+Disallow: /mobile/*
+Disallow: /profile*
+Disallow: /tai-khoan*
+Disallow: /checkoutConfirm
+Disallow: /thankyou
+Disallow: */feed/
+Disallow: *?feed*
+Disallow: /danh-gia
+Disallow: /thanh-toan/
+Sitemap: https://www.vntrip.vn/sitemap/sitemap_index.xml
+Sitemap: https://www.vntrip.vn/cam-nang/sitemap_index.xml

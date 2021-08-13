@@ -1,0 +1,164 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fe-vntrip-vn
+  namespace: vntrip-prod
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 3
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: fe-vntrip-vn
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: fe-vntrip-vn
+    spec:
+      containers:
+      - env:
+        - name: FAKE
+          value: https://cdn.vntrip.vn/
+        image: reg.vntrip.vn/frontend/nextjs-vntrip-vn:master-9f7acb91
+        imagePullPolicy: Always
+        name: fe-vntrip-vn
+        ports:
+        - containerPort: 3000
+          protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 3000
+            scheme: HTTP
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 5
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 3000
+            scheme: HTTP
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
+        # livenessProbe:
+        #   failureThreshold: 3
+        #   initialDelaySeconds: 40
+        #   periodSeconds: 2
+        #   successThreshold: 1
+        #   tcpSocket:
+        #     port: 3000
+        #   timeoutSeconds: 2
+        # name: fe-vntrip-vn
+        # ports:
+        # - containerPort: 3000
+        #   protocol: TCP
+        # readinessProbe:
+        #   failureThreshold: 3
+        #   initialDelaySeconds: 40
+        #   periodSeconds: 2
+        #   successThreshold: 2
+        #   tcpSocket:
+        #     port: 3000
+          # timeoutSeconds: 2
+        resources:
+          limits:
+            cpu: 800m
+            memory: 800Mi
+          requests:
+            cpu: 300m
+            memory: 200Mi
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /etc/localtime
+          name: tz-hcm
+      dnsPolicy: ClusterFirst
+      imagePullSecrets:
+      - name: registry
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - hostPath:
+          path: /usr/share/zoneinfo/Asia/Ho_Chi_Minh
+          type: ""
+        name: tz-hcm
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fe-vntrip-vn
+  namespace: vntrip-prod
+spec:
+  ports:
+  - name: http
+    port: 3000
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: fe-vntrip-vn
+  type: ClusterIP
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      if ($request_uri ~* \.(js|css|gif|jpe?g|png)) {
+        expires 1M;
+        add_header Cache-Control "public";
+      }
+      # more_set_headers 'server: VntripOps';
+      # more_set_headers 'x-recruiting: Like HTTP headers? Come write ours: https://hr.vntrip.vn';
+      more_set_headers 'X-Powered-By:';
+    nginx.ingress.kubernetes.io/affinity: cookie
+    nginx.ingress.kubernetes.io/session-cookie-expires: "172800"
+    nginx.ingress.kubernetes.io/session-cookie-max-age: "172800"
+    nginx.ingress.kubernetes.io/session-cookie-name: INGRESSCOOKIE
+    nginx.ingress.kubernetes.io/limit-rate: 100K
+    nginx.ingress.kubernetes.io/limit-whitelist: "125.212.204.0/27"
+    nginx.ingress.kubernetes.io/limit-rps: "11"
+    nginx.ingress.kubernetes.io/limit-rpm: "300"
+    nginx.ingress.kubernetes.io/limit-burst-multiplier: "10"
+    nginx.ingress.kubernetes.io/limit-req-status-code: "429"
+    nginx.ingress.kubernetes.io/limit-conn-status-code: "429"
+    # nginx.ingress.kubernetes.io/enable-access-log: "false"
+    nginx.ingress.kubernetes.io/proxy-body-size: 20m
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "1800"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "2000"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "2000"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    # nginx.ingress.kubernetes.io/ssl-redirect: "false"
+  name: ingress-fe-vntrip-vn
+  namespace: vntrip-prod
+spec:
+  rules:
+  - host: www.vntrip.vn
+    http:
+      paths:
+      - backend:
+          service:
+            name: fe-vntrip-vn
+            port:
+              number: 3000
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - "*.vntrip.vn"
+    secretName: ssl-vntrip-vn

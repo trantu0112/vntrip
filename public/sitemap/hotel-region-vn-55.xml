@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+>
+  <url>
+    <loc>https://www.vntrip.vn/khach-san/bac-giang</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2020-11-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.vntrip.vn/khach-san/bac-giang/1-sao</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2020-11-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.vntrip.vn/khach-san/bac-giang/2-sao</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2020-11-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.vntrip.vn/khach-san/bac-giang/3-sao</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2020-11-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.vntrip.vn/khach-san/bac-giang/4-sao</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2020-11-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.vntrip.vn/khach-san/bac-giang/5-sao</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2020-11-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.vntrip.vn/khach-san/bac-giang/lang-giang</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2020-11-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.vntrip.vn/khach-san/bac-giang/lang-giang/1-sao</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2020-11-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.vntrip.vn/khach-san/bac-giang/lang-giang/2-sao</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2020-11-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.vntrip.vn/khach-san/bac-giang/lang-giang/3-sao</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2020-11-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.vntrip.vn/khach-san/bac-giang/lang-giang/4-sao</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2020-11-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.vntrip.vn/khach-san/bac-giang/lang-giang/5-sao</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2020-11-25</lastmod>
+  </url>
+</urlset>

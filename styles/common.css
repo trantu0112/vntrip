@@ -1,0 +1,459 @@
+.hide-slide360 {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: rgba(0, 0, 0, 0.77);
+}
+.hide-slide360 .all-image360 {
+    width: 96%;
+    height: 86%;
+    top: 51%;
+    position: absolute;
+    margin: auto;
+    z-index: 10;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.hide-slide360 .all-image360 a.close-gallery {
+    top: -58px;
+    right: 0;
+    position: absolute;
+}
+.hide-slide360 .all-image360 .slideshow-360 {
+    max-width: 100%;
+    height: 100%;
+    position: relative;
+}
+.hide-slide360 .all-image360 .slideshow-360 .next,
+.hide-slide360 .all-image360 .slideshow-360 .prev {
+    z-index: 10;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+.hide-slide360 .all-image360 .slideshow-360 .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.hide-slide360 .all-image360 .slideshow-360 #test-360 {
+    width: 100%;
+    height: 500px;
+}
+.hide-slide360 .addblock {
+    display: block !important;
+}
+.image360-show {
+    opacity: 0;
+    visibility: hidden;
+}
+.image360-show.active {
+    opacity: 1;
+    visibility: visible;
+}
+.next:hover,
+.prev:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+#thumb {
+    text-align: center;
+}
+.close-gallery span {
+    font-size: 46px;
+    vertical-align: middle;
+    margin-left: 8px;
+    font-family: Georgia, serif;
+    position: relative;
+    top: -4px;
+}
+
+.close-gallery {
+    color: #fff;
+    font-size: 14px;
+    position: fixed;
+    top: 0;
+    right: 20px;
+    z-index: 10;
+    text-decoration: none;
+}
+
+.close-gallery:hover {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.hotelDetail__rate {
+    cursor: pointer;
+}
+
+body .ant-pagination-item,
+body .ant-pagination-prev,
+body .ant-pagination-next,
+body .ant-pagination-jump-prev,
+body .ant-pagination-jump-next,
+body .ant-pagination-prev .ant-pagination-item-link,
+body .ant-pagination-next .ant-pagination-item-link {
+    border-radius: 4px;
+}
+
+.ant-picker-header button {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.btn-google-login {
+    font: inherit !important;
+    box-shadow: none !important;
+    border-color: rgba(217, 217, 217, 1) !important;
+}
+.btn-google-login *:not(svg) {
+    color: #878787 !important;
+    padding: 0 !important;
+    font: inherit !important;
+    margin: 0 !important;
+    font-weight: 600 !important;
+}
+
+/*fix style order detail flight*/
+.justify-content-space-between {
+    justify-content: space-between;
+}
+.w33 {
+    width: 33%;
+}
+.borderRadius4px {
+    border-radius: 4px;
+    overflow: hidden;
+}
+.profileFlightDetail .ticketDetail__item {
+    border: none;
+}
+.profileFlightDetail .flightActive__title {
+    border-bottom: 1px dashed rgba(204, 204, 204, 0.5);
+}
+.profileFlightDetail .flightTicket__left {
+    align-items: center;
+    width: 100% !important;
+}
+.borderRadius0px4px0px0px {
+    border-radius: 0 4px 0 0;
+    overflow: hidden;
+}
+.box-segment {
+    flex-wrap: wrap;
+    padding: 15px;
+    background: #f5f5f5;
+}
+@media (max-width: 991px) {
+    .profileFlightDetail .flightActive__item .flightTicket__info {
+        flex: 1;
+    }
+    .profileFlightDetail .flightActive__item .flightTicket__detail,
+    .profileFlightDetail .flightTicket__detail {
+        display: block;
+        position: relative;
+        visibility: visible;
+        transform: none;
+        background: transparent;
+    }
+    .profileFlightDetail .ticketDetail__item .box-segment.d-flex .text-right {
+        text-align: right !important;
+    }
+}
+@media (max-width: 991px) and (min-width: 768px) {
+    .box-segment .w33 {
+        width: 50%;
+    }
+    .box-segment .w33:nth-child(2n + 1) {
+        padding-left: 0 !important;
+    }
+    .box-segment .w33:nth-child(2n) {
+        padding-left: 15px !important;
+    }
+}
+@media (max-width: 767px) {
+    .box-segment .w33 {
+        width: 100%;
+        padding: 0 !important;
+    }
+}
+/*fix style order detail flight*/
+.justify-content-space-between {
+    justify-content: space-between;
+}
+.w33 {
+    width: 33%;
+}
+.borderRadius4px {
+    border-radius: 4px;
+    overflow: hidden;
+}
+.profileFlightDetail .ticketDetail__item {
+    border: none;
+}
+.profileFlightDetail .flightActive__title {
+    border-bottom: 1px dashed rgba(204, 204, 204, 0.5);
+}
+.profileFlightDetail .flightTicket__left {
+    align-items: center;
+    width: 100% !important;
+}
+.borderRadius0px4px0px0px {
+    border-radius: 0 4px 0 0;
+    overflow: hidden;
+}
+.box-segment {
+    flex-wrap: wrap;
+    padding: 15px;
+    background: #f5f5f5;
+}
+@media (max-width: 991px) {
+    .profileFlightDetail .flightActive__item .flightTicket__info {
+        flex: 1;
+    }
+    .profileFlightDetail .flightActive__item .flightTicket__detail,
+    .profileFlightDetail .flightTicket__detail {
+        display: block;
+        position: relative;
+        visibility: visible;
+        transform: none;
+        background: transparent;
+    }
+    .profileFlightDetail .ticketDetail__item .box-segment.d-flex .text-right {
+        text-align: right !important;
+    }
+}
+@media (max-width: 991px) and (min-width: 768px) {
+    .box-segment .w33 {
+        width: 50%;
+    }
+    .box-segment .w33:nth-child(2n + 1) {
+        padding-left: 0 !important;
+    }
+    .box-segment .w33:nth-child(2n) {
+        padding-left: 15px !important;
+    }
+}
+@media (max-width: 767px) {
+    .box-segment .w33 {
+        width: 100%;
+        padding: 0 !important;
+    }
+}
+
+.dealDetail .dealDetail__title .d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dealDetail .dealDetail__title .d-flex .facebook__group {
+    display: flex;
+    align-items: center;
+}
+.dealDetail .dealDetail__title .d-flex .facebook__group .li_like {
+    margin-right: 10px;
+}
+
+.dealDetail .dealDetail__title .d-flex .facebook__group .li_share {
+    transform: translateY(-5px);
+}
+
+.hotelDetail .hotelDetail__main .d-flex .facebook__group {
+    display: flex;
+    align-items: center;
+}
+
+.hotelDetail .hotelDetail__main .d-flex .facebook__group .li_like {
+    margin-right: 10px;
+}
+
+.hotelDetail .hotelDetail__main .d-flex .facebook__group .li_share {
+    transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+    .dealDetail .dealDetail__title .d-flex {
+        display: block !important;
+    }
+    .hotelDetail .hotelDetail__main .d-flex {
+        display: block !important;
+    }
+    .hotelDetail .hotelDetail__main .d-flex .facebook__group {
+        margin-top: 15px;
+        padding-left: 3px;
+        justify-content: center;
+    }
+}
+
+/*fix style price breakdown in checkout page*/
+.checkoutLayout__sidebar .bookingInfo__price {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.checkoutLayout__sidebar .bookingInfo__price:last-child {
+    border-bottom: none;
+}
+.checkoutLayout__sidebar .bookingInfo__price_total {
+    margin: 0 -15px;
+    border-top: 2px solid #f1f1f1;
+    padding: 15px;
+}
+.bookingInfo__price_total ul > li > ul > li {
+    padding: 5px 0;
+}
+.bookingInfo__price_total ul > li > ul > li:before {
+    content: '●';
+    padding-right: 10px;
+}
+.bookingInfo__price_total ul > li > ul > li p:nth-child(1) {
+    width: 70%;
+    padding-right: 15px;
+}
+.bookingInfo__price_total ul > li > ul > li p:nth-child(2) {
+    width: 30%;
+}
+.redirectLoading:before {
+    background-color: #fff;
+}
+@media (min-width: 768px) {
+    .hotelSort__group {
+        flex-wrap: wrap;
+    }
+}
+
+@media(min-width: 767px) {
+    body .image-gallery-slide .image-gallery-image {
+        width: auto;
+    }
+}
+
+.hotelVertical{
+    position: relative;
+}
+.hotelVertical .hotelAddress__text button{
+    z-index: 100;
+    position: relative;
+}
+.hotelVertical a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: transparent;
+}
+.modal-gallery{
+    background-color: rgba(0, 0, 0, 0.95);
+}
+@media (min-width: 768px){
+    .ant-modal-wrap.modal-gallery .ant-modal {
+        top: 1vw;
+        width: 97%!important;
+    }
+}
+.slick-slide img{
+    width: 100% !important;
+}
+
+
+.searchBox .searchBox__main{
+    /*padding: 40px 15px 15px;*/
+}
+.searchBox .searchBox__btn{
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.comboBox a:hover{
+    text-decoration: none;
+}
+.black{
+    color: #000;
+}
+.comboBox .icon__desktop{
+    width: 40px;
+    margin-right: 10px;
+}
+.searchBox__combo .comboBox .p1{
+    font-size: 12px;
+}
+.d-none-mobile{
+    display: block;
+}
+.d-none-desktop{
+    display: none!important;
+}
+.comboHot .content .textCombo p.title {
+    min-height: 60px;
+}
+
+.bookingInfo__item{
+    border-bottom: 1px dashed #ddd;
+}
+
+div.lotte_tooltip {
+    max-width: unset;
+}
+.boxShadow{
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.orPopupVerify {
+    margin: 6px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.paymentExpired {
+    font-size: 17px;
+}
+
+@media (min-width: 768px) {
+    .searchBox .searchBox__btn{
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .searchBox .flightOrigin .suggestDefault.open {
+        min-width: 480px;
+    }
+    .searchBox__item:last-child .suggestDefault{
+        width: 400px;
+        left: 0;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .vntSearch__main{
+        padding:15px 0 ;
+    }
+    .d-none-mobile{
+        display: none!important;
+    }
+    .d-none-desktop{
+        display: block!important;
+    }
+    .checkoutLayout__right{
+        background: #ffffff;
+    }
+}
+@media (max-width: 991px) {
+    .comboBox .icon__desktop{
+      display: none;
+    }
+
+}

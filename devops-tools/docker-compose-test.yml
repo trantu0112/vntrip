@@ -1,0 +1,18 @@
+version: "3.4"
+
+services:
+  app:
+    image: iiiiiiiiiiii
+    container_name: ccccccccccc
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    env_file: .env.test
+
+  # db:
+  #   image: redis
+  #   container_name: redis-test
+  #   restart: unless-stopped

@@ -1,0 +1,77 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fe-vntrip-vn
+  namespace: __NAMESPACE__
+spec:
+  progressDeadlineSeconds: 240
+  replicas: 3
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: fe-vntrip-vn
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: fe-vntrip-vn
+    spec:
+      containers:
+      - env:
+        - name: FAKE
+          value: https://cdn.vntrip.vn/
+        image: __IMAGE_URL__
+        imagePullPolicy: Always
+        name: fe-vntrip-vn
+        ports:
+        - containerPort: 3000
+          protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 3000
+            scheme: HTTP
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 5
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 3000
+            scheme: HTTP
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
+        resources:
+          limits:
+            cpu: 800m
+            memory: 800Mi
+          requests:
+            cpu: 300m
+            memory: 200Mi
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /etc/localtime
+          name: tz-hcm
+      dnsPolicy: ClusterFirst
+      imagePullSecrets:
+      - name: registry
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - hostPath:
+          path: /usr/share/zoneinfo/Asia/Ho_Chi_Minh
+          type: ""
+        name: tz-hcm

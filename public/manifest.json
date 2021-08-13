@@ -1,0 +1,8 @@
+{
+  "name": "VNTRIP.VN",
+  "short_name": "VNTRIP",
+  "start_url": "/",
+  "display": "standalone",
+  "gcm_sender_id": "482941778795",
+  "gcm_user_visible_only": true
+}

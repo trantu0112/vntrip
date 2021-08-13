@@ -1,0 +1,13 @@
+
+FROM node:12-alpine
+MAINTAINER nguyenvn
+
+WORKDIR /usr/app
+COPY ./package*.json ./
+RUN npm install 
+COPY ./ ./
+RUN npm run build:test-new-user
+
+EXPOSE 3000
+# USER node
+CMD [ "npm", "run", "start:test-new-user" ]
